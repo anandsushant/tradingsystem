@@ -1,0 +1,27 @@
+# Install with: pip install -r requirements.txt
+
+# Data Fetching
+yfinance                      # (1.4.0) Download stock data from Yahoo Finance
+
+# Data Manipulation & Analysis
+pandas                        # (3.0.3) DataFrames, data manipulation
+numpy                         # (2.4.6) Numerical computing, arrays
+
+# Backtesting Engine
+backtrader                    # (1.9.78.123-py2.py3-none-any.whl) Backtesting framework
+
+# Technical Indicators
+pandas-ta                     # (0.4.71b0) Technical Analysis Library (simpler, works better)
+
+# Visualization & Plotting
+matplotlib                    # (3.10.9) Create charts & plots
+seaborn                       # (0.13.2) Enhanced plotting (optional but nice)
+
+# Statistical Analysis
+scipy                         # (1.17.1) Scientific computing (Sharpe Ratio, etc.)
+
+# Date & Time Handling
+python-dateutil               # (2.9.0.post0)  Handle dates, timezones
+
+# Utilities
+python-dotenv                 # (1.2.2) Load environment variables
