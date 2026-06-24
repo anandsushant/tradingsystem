@@ -1,7 +1,5 @@
 
-PROJECT: Algorithmic Trading System with Dual Moving Average Strategy
-CERTIFICATE: Certificate Program in Algorithmic Trading (CPAT)
-CAPSTONE PROJECT SUBMISSION
+PROJECT: Algorithmic Trading System
 
 This guide provides step-by-step instructions to set up and run the trading
 system on any Linux/WSL system from scratch.
@@ -9,11 +7,9 @@ system on any Linux/WSL system from scratch.
 TABLE OF CONTENTS
 
 1. SYSTEM REQUIREMENTS
-2. PROJECT STRUCTURE OVERVIEW
-3. COMPLETE SETUP INSTRUCTIONS
-4. HOW TO RUN THE SYSTEM
-5. UNDERSTANDING THE RESULTS
-6. CUSTOMIZATION OPTIONS
+2. COMPLETE SETUP INSTRUCTIONS
+3. HOW TO RUN THE SYSTEM
+4. UNDERSTANDING THE RESULTS
 
 
 1. SYSTEM REQUIREMENTS
@@ -28,41 +24,7 @@ python3 --version
 pip --version
 ```
 
-2. PROJECT STRUCTURE OVERVIEW
-
-
-trading-system/
-├── README.md                    # Project overview
-├── INSTRUCTIONS.txt            # This file
-├── config.py                   # Configuration (stocks, parameters)
-├── requirements.txt            # Python dependencies
-├── main.py                     # Entry point - run this to execute
-│
-├── data/
-│   ├── fetch.py               # Download stock data from Yahoo Finance
-│   ├── data_loader.py         # Load CSV files into memory
-│   ├── validation.py          # Validate data quality
-│   └── raw/                   # Folder with downloaded CSV files
-│       ├── AAPL.csv
-│       ├── MSFT.csv
-│       ├── GOOGL.csv
-│       └── ... (8 more stock CSVs)
-│
-├── strategy/
-│   ├── base_strategy.py       # Abstract base class for strategies
-│   └── dual_ma_strategy.py    # Actual trading strategy
-│
-└── backtesting/
-    └── backtest_engine.py     # Simulation engine
-
-
-KEY FILES TO KNOW:
-- config.py: Change trading parameters here (stocks, capital, MA periods)
-- main.py: Run this to execute the entire system
-- data/fetch.py: Run this to download/update stock data
-
-
-3. COMPLETE SETUP INSTRUCTIONS
+2. COMPLETE SETUP INSTRUCTIONS
 
 STEP 1: OPEN TERMINAL
 
@@ -106,7 +68,7 @@ STEP 4: UPGRADE PIP
 
 Ensure pip is up to date:
 
-```bash
+```
 pip install --upgrade pip
 ```
 
@@ -115,7 +77,7 @@ STEP 5: INSTALL DEPENDENCIES
 
 Install all required Python libraries:
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -131,7 +93,7 @@ STEP 6: VERIFY INSTALLATION
 
 Test that all libraries imported correctly:
 
-```bash
+```
 python3 checkenv.py
 "
 ```
@@ -139,7 +101,7 @@ checkenv.py is written to verify required libraries
 
 STEP 7: DOWNLOAD STOCK DATA
 
-```bash
+```
 python3 data/fetch.py
 ```
 
@@ -148,13 +110,13 @@ You can change this in config.py
 
 SETUP COMPLETE!
 
-4. HOW TO RUN THE SYSTEM
+3. HOW TO RUN THE SYSTEM
 
 BASIC EXECUTION (No parameters needed)
 
 Simply run:
 
-```bash
+```
 python3 main.py
 ```
 
@@ -216,7 +178,7 @@ STEP 7: Equity Curve Summary
 - Peak capital reached
 - Lowest capital reached
 
-5. UNDERSTANDING THE RESULTS
+4. UNDERSTANDING THE RESULTS
 
 
 KEY METRICS EXPLAINED
@@ -272,27 +234,3 @@ WHAT DO THESE RESULTS MEAN?
 NEGATIVE RETURN (-4.13%):
 The strategy lost 4.13% over 5 years.
 
-
-6. CUSTOMIZATION OPTIONS
-
-
-You can easily modify the strategy by editing config.py.
-
-OPTION 1: CHANGE MOVING AVERAGE PERIODS
-
-Current (slow, fewer trades):
-```
-FAST_MA_PERIOD = 50
-SLOW_MA_PERIOD = 200
-```
-
-Try (faster, more trades):
-```
-FAST_MA_PERIOD = 20
-SLOW_MA_PERIOD = 50
-```
-
-Then run:
-```
-python3 main.py
-```
